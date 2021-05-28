@@ -23,21 +23,25 @@ class BaseController:
         p1, p2 = GPIO.input(7), GPIO.input(8)
         p3, p4 = GPIO.input(10), GPIO.input(12)
         if p1 == GPIO.HIGH:
+            print('Going forwards')
             self._interface.move_motor(0, 100)
             self._interface.move_motor(1, 100)
             self._interface.move_motor(2, -100)
             self._interface.move_motor(3, -100)
         elif p2 == GPIO.HIGH:
+            print('Going backwards')
             self._interface.move_motor(0, -100)
             self._interface.move_motor(1, -100)
             self._interface.move_motor(2, 100)
             self._interface.move_motor(3, 100)
         elif p3 == GPIO.HIGH:
+            print('Going left')
             self._interface.move_motor(0, -100)
             self._interface.move_motor(1, 100)
             self._interface.move_motor(2, -100)
             self._interface.move_motor(3, 100)
         elif p4 == GPIO.HIGH:
+            print('Going right')
             self._interface.move_motor(0, 100)
             self._interface.move_motor(1, -100)
             self._interface.move_motor(2, 100)
